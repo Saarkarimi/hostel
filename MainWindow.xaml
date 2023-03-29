@@ -1,0 +1,119 @@
+﻿<Window x:Class="hostel.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:hostel"
+        mc:Ignorable="d"
+        Title="Гостиница" Height="450" Width="800">
+    <Grid>
+        <StackPanel Margin="0,0,0,0" VerticalAlignment="Top" Orientation="Horizontal" Grid.ColumnSpan="2">
+            <Button Content="Добавить клиента" Margin="5" Click="addClientBtn_Click"/>
+            <Button Content="Добавить комнату" Margin="5" Click="addRoomBtn_Click"/>
+            <Button Content="Добавить бронь" Margin="5" Click="addBookingBtn_Click"/>
+        </StackPanel>
+        <TabControl Margin="0,30,0,0" Grid.ColumnSpan="2">
+            <TabItem x:Name="tabClients">
+                <TabItem.Header>
+                    <TextBlock>Клиенты</TextBlock>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <DockPanel>
+                        <DataGrid x:Name="myClientsGrid" x:FieldModifier="public" AutoGenerateColumns="False" IsReadOnly="True" ColumnWidth="*">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Код" Binding="{Binding id}" Width="40" />
+                                <DataGridTextColumn Header="Фамилия" Binding="{Binding family}" />
+                                <DataGridTextColumn Header="Имя" Binding="{Binding name}" />
+                                <DataGridTextColumn Header="Отчество" Binding="{Binding patronymic}" />
+                                <DataGridTextColumn Header="Телефон" Binding="{Binding phone}" />
+                                <DataGridTemplateColumn>
+                                    <DataGridTemplateColumn.HeaderTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="Действия" />
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.HeaderTemplate>
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal">
+                                                <Button x:Name="editClient" Content="Изменить" Click="editClientBtn_Click" Margin="1" />
+                                                <Button x:Name="deleteClient" Content="Удалить" Click="deleteClientBtn_Click" Margin="1" />
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </DockPanel>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem x:Name="tabRooms">
+                <TabItem.Header>
+                    <TextBlock>Комнаты</TextBlock>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <DockPanel>
+                        <DataGrid x:Name="myRoomsGrid" x:FieldModifier="public" AutoGenerateColumns="False" IsReadOnly="True" ColumnWidth="*">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Код" Binding="{Binding id}" Width="40" />
+                                <DataGridTextColumn Header="Номер" Binding="{Binding number}" />
+                                <DataGridTextColumn Header="Кол-во комнат" Binding="{Binding size}" />
+                                <DataGridTextColumn Header="Тип комнаты" Binding="{Binding type}" />
+                                <DataGridTextColumn Header="Цена за ночь" Binding="{Binding price}" />
+                                <DataGridTextColumn Header="Статус" Binding="{Binding status}" />
+                                <DataGridTemplateColumn>
+                                    <DataGridTemplateColumn.HeaderTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="Действия" />
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.HeaderTemplate>
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal">
+                                                <Button x:Name="editRoom" Content="Изменить" Click="editRoomBtn_Click" Margin="1" />
+                                                <Button x:Name="deleteRoom" Content="Удалить" Click="deleteRoomBtn_Click" Margin="1" />
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </DockPanel>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem x:Name="tabReservations">
+                <TabItem.Header>
+                    <TextBlock>Бронирования</TextBlock>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <DockPanel>
+                        <DataGrid x:Name="myReservationsGrid" x:FieldModifier="public" AutoGenerateColumns="False" IsReadOnly="True" ColumnWidth="*">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Код" Binding="{Binding id}" Width="40" />
+                                <DataGridTextColumn Header="Клиент" Binding="{Binding client}" />
+                                <DataGridTextColumn Header="Комната" Binding="{Binding room}" />
+                                <DataGridTextColumn Header="С" Binding="{Binding date_start}" />
+                                <DataGridTextColumn Header="По" Binding="{Binding date_end}" />
+                                <DataGridTextColumn Header="Оплата" Binding="{Binding price}" />
+                                <DataGridTemplateColumn>
+                                    <DataGridTemplateColumn.HeaderTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="Действия" />
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.HeaderTemplate>
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal">
+                                                <Button x:Name="editBooking" Content="Изменить" Click="editBookingBtn_Click" Margin="1" />
+                                                <Button x:Name="deleteBooking" Content="Удалить" Click="deleteBookingBtn_Click" Margin="1" />
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </DockPanel>
+                </TabItem.Content>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

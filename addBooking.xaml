@@ -1,0 +1,21 @@
+﻿<Window x:Class="hostel.addBooking"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:hostel"
+        mc:Ignorable="d"
+        Title="Новое бронирование" Height="320" Width="300">
+    <Grid>
+        <TextBlock x:Name="textClient" HorizontalAlignment="Center" Margin="0,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="ФИО гостя"/>
+        <ComboBox x:Name="comboboxClient" HorizontalAlignment="Center" Height="23" Margin="0,45,0,0" VerticalAlignment="Top" Width="180"/>
+        <TextBlock x:Name="textRoom" HorizontalAlignment="Center" Margin="0,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Номер комнаты"/>
+        <ComboBox x:Name="comboboxRoom" HorizontalAlignment="Center" Height="23" Margin="0,100,0,0" VerticalAlignment="Top" Width="180"/>
+        <TextBlock x:Name="textDate" HorizontalAlignment="Center" Margin="0,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Дата заезда и выезда"/>
+        <DatePicker x:Name="dateStart" HorizontalAlignment="Center" Height="23" Margin="0,150,0,0" VerticalAlignment="Top" />
+        <DatePicker x:Name="dateEnd" HorizontalAlignment="Center" Height="23" Margin="0,180,0,0" VerticalAlignment="Top" />
+        <TextBlock x:Name="textPrice" HorizontalAlignment="Center" Margin="0,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Оплата"/>
+        <TextBox x:Name="fieldPrice" HorizontalAlignment="Center" Height="23" Margin="0,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180"/>
+        <Button Content="Добавить" Margin="0,250,0,0" HorizontalAlignment="Center" Width="190" Height="20" Click="addBookingBtn_Click"/>
+    </Grid>
+</Window>

@@ -1,0 +1,29 @@
+﻿<Window x:Class="hostel.addRoom"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:hostel"
+        mc:Ignorable="d"
+        Title="Добавление комнаты" Height="320" Width="300">
+    <Grid>
+        <TextBlock x:Name="textNumber" HorizontalAlignment="Center" Margin="0,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Номер комнаты"/>
+        <TextBox x:Name="fieldNumber" HorizontalAlignment="Center" Height="23" Margin="0,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180"/>
+        <TextBlock x:Name="textSize" HorizontalAlignment="Center" Margin="0,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Количество кроватей"/>
+        <TextBox x:Name="fieldSize" HorizontalAlignment="Center" Height="23" Margin="0,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180"/>
+        <TextBlock x:Name="textType" HorizontalAlignment="Center" Margin="0,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Тип комнаты"/>
+        <ComboBox x:Name="fieldType" HorizontalAlignment="Center" Height="23" Margin="0,130,0,0" VerticalAlignment="Top" Width="180">
+            <ComboBoxItem Content="Стандарт"/>
+            <ComboBoxItem Content="Комфорт"/>
+            <ComboBoxItem Content="Люкс"/>
+        </ComboBox>
+        <TextBlock x:Name="textPrice" HorizontalAlignment="Center" Margin="0,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Стоимость ночи"/>
+        <TextBox x:Name="fieldPrice" HorizontalAlignment="Center" Height="23" Margin="0,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180"/>
+        <TextBlock x:Name="textStatus" HorizontalAlignment="Center" Margin="0,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Статус"/>
+        <ComboBox x:Name="fieldStatus" HorizontalAlignment="Center" Height="23" Margin="0,230,0,0" VerticalAlignment="Top" Width="180">
+            <ComboBoxItem Content="Свободно"/>
+            <ComboBoxItem Content="Занято"/>
+        </ComboBox>
+        <Button Content="Добавить" Margin="0,250,0,0" HorizontalAlignment="Center" Width="190" Height="20" Click="addRoomBtn_Click"/>
+    </Grid>
+</Window>
